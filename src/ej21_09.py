@@ -1,16 +1,16 @@
+
 def comprobar_edad(edad):
+    """Devuelve el precio de entrada basado en la edad."""
     if edad < 4:
-        return print("Entras gratis")
+        return "Entras gratis"
+    elif 4 <= edad <= 18:
+        return "Precio: 5€"
     else:
-        if edad >= 4 and edad <= 18:
-            return print("Precio: 5€")
-        else:
-            return print("Precio: 10€")
+        return "Precio: 10€"
 
 def main():
-    edad=int(input("Dame tu edad"))
-    comprobar_edad(edad)
-
+    edad = int(input("Dame tu edad: "))
+    print(comprobar_edad(edad))
 
 if __name__ == '__main__':
     main()
