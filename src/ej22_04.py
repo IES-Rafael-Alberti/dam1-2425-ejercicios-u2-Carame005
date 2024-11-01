@@ -1,4 +1,6 @@
 
+def preguntar_numero():
+    return input("Dime un número: ")
 
 def comprobar_numero(valor):
     try:
@@ -11,12 +13,19 @@ def comprobar_numero(valor):
         return ("Introduce un valor valido")
 
 def main():
-    n=input("Introduce un numero")
+    n=preguntar_numero()
     cadena=[]
     while not comprobar_numero(n):
-        n=input("Introduce un numero valido")
+        n=preguntar_numero() 
     for i in range(int(n), -1, -1,):
+        cadena.append(str(i))
+    print( "+".join(cadena))
+    cadena=[]
+    for i in reversed (range(int(n)+1)):
         cadena.append(str(i))
     print( ",".join(cadena))
 if __name__ == "__main__":
     main()
+    
+    
+    

@@ -1,4 +1,5 @@
-
+def preguntar_edad():
+    return input("Dime tu edad: ")
 
 def comprobar_numero(valor):
     try:
@@ -8,14 +9,14 @@ def comprobar_numero(valor):
         else:
             return False
     except ValueError:
-        return ("Introduce un valor valido")
+        return ("Introduce una edad valida")
 
 def main():
-    n=input("Introduce un numero")
+    n=preguntar_edad()
     cadena=[]
     while not comprobar_numero(n):
-        n=input("Introduce un numero valido")
-    for i in range(int(n), -1, -1,):
+        n=preguntar_edad()
+    for i in range(1, int(n)+1,):
         cadena.append(str(i))
     print( ",".join(cadena))
 if __name__ == "__main__":
