@@ -1,4 +1,5 @@
 def pedir_num():
+    """Solicita al usuario un número entero positivo."""
     while True:
         try:
             numero = int(input("Dame un número entero positivo: "))
@@ -9,10 +10,14 @@ def pedir_num():
         except ValueError:
             print("Entrada inválida. Introduce un número entero.")
 
+def suma_digitos(numero):
+    """Calcula la suma de los dígitos de un número entero positivo."""
+    return sum(int(digito) for digito in str(numero))
+
 def main():
     numero = pedir_num()
-    suma_digitos = sum(int(digito) for digito in str(numero))
-    print("La suma de los dígitos es:", suma_digitos)
+    resultado = suma_digitos(numero)
+    print("La suma de los dígitos es:", resultado)
 
 if __name__ == "__main__":
     main()

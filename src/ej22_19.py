@@ -1,4 +1,7 @@
+
+
 def menu():
+    """Muestra el menú y devuelve la opción seleccionada por el usuario."""
     print("\nMenu:")
     print("1. Comenzar programa")
     print("2. Imprimir listado")
@@ -10,17 +13,24 @@ def menu():
         print("Opción inválida. Por favor, ingrese un número.")
         return None
 
+def ejecutar_opcion(opcion):
+    """Ejecuta la opción seleccionada y devuelve el mensaje correspondiente."""
+    if opcion == 1:
+        return "Programa iniciado"
+    elif opcion == 2:
+        return "Imprimiendo documentos"
+    elif opcion == 3:
+        return "Programa finalizado"
+    else:
+        return "Opción inválida"
+
 def main():
-    p = menu()
-    while p != 3:
-        if p == 1:
-            print("Programa iniciado")
-        elif p == 2:
-            print("Imprimiendo documentos")
-        else:
-            print("Opción inválida") 
-        p = menu()
-    print("Programa finalizado")
+    while True:
+        opcion = menu()
+        mensaje = ejecutar_opcion(opcion)
+        print(mensaje)
+        if opcion == 3:
+            break
 
 if __name__ == "__main__":
     main()
